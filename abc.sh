@@ -9,5 +9,5 @@ echo
 echo "OS"
 lsb_release -d
 echo "Addition of two no."
-NUM = $(($numone + $numtwo))
+NUM=$(($numone + $numtwo))
 echo "$NUM"
