@@ -1,5 +1,4 @@
 #!/bin/sh
-echo Hello World >> /home/arjun/Downloads/abc.log
 echo "Hello"
 echo
 echo "User:" `whoami`
