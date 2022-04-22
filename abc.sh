@@ -1,5 +1,4 @@
 #!/bin/sh
-echo "TEST"
 echo "Hello"
 echo
 echo "User:" `whoami`
