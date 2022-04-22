@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "TEST"
 echo Hello World >> /home/arjun/Downloads/abc.log
 echo "Hello"
 echo
