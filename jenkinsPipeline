@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    environment {
+        name = "Arjun Singh"
+    }
+    parameters {
+        string(name: "person", defaultValue: "Arjun Singh", description: "Enter Person Name")
+        booleanParam(name: "bool", defaultValue: true, description: "Enter Bool Value")
+        choice(name: "city", choices: ['Delhi', 'Shamli', 'U.P'], description: "Enter Bool Value")
+    }
+
+    stages {
+        stage('Hello') {
+            input{
+                message 'Confirmation'
+                ok 'yes continue'
+            }
+            steps {
+                sh 'date'
+                sh 'pwd'
+            }
+        }
+        stage('Hello QA') {
+            steps {
+                sh'''
+                cal 2022
+                pwd
+                echo "${name}"
+                '''
+            }
+        }
+        stage('Hello Prod') {
+            environment {
+                prod = "Env only access to prod"
+            }
+            steps {
+                sh 'echo "${BUILD_ID}"'
+                sh 'echo "${prod}"'
+                sh 'echo "${person}"'
+            }
+        }
+    }
+    post{
+        always{
+            echo "I will always run"
+        }
+    }
+}
