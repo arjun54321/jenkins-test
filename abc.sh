@@ -1,6 +1,5 @@
 #!/bin/sh
 echo "Hello"
-echo
 echo "User:" `whoami`
 echo
 echo "Directory" $( pwd )
