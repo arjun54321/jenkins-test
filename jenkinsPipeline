@@ -24,7 +24,6 @@ pipeline {
         stage('Hello QA') {
             steps {
                 sh'''
-                cal 2022
                 pwd
                 echo "${name}"
                 '''
